@@ -5,6 +5,8 @@ using ServerApp.Contracts.Logging;
 using ServerApp.Logging;
 using ServerApp.Domain.Data;
 using System.Text;
+using ServerApp.Contracts.Repositories;
+using ServerApp.Persistence.Repositories;
 
 namespace ServerApp.API.Extensions;
 public static class ServiceExtensions
@@ -43,6 +45,7 @@ public static class ServiceExtensions
 
     public static void ConfigureRepositories(this IServiceCollection services)
     {
+        services.AddScoped<IUserRepository, UserRepository>();
     }
 }
 
