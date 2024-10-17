@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ServerApp.Persistence.Repositories;
-public class UserRepository : RepositoryBase<User>, IUserRepository
+public class TicketRepository : RepositoryBase<Ticket>, ITicketRepository
 {
-    public UserRepository(AppDbContext context) : base(context)
+    public TicketRepository(AppDbContext context) : base(context)
     {
     }
 }

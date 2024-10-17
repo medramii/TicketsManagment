@@ -48,5 +48,10 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
         await Task.CompletedTask;
     }
 
+    public async Task<bool> Exists(int id)
+    {
+        return await FindAsync(id) != null;
+    }
+
     public async Task SaveAsync() => await _appDbContext.SaveChangesAsync();
 }
