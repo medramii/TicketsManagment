@@ -1,0 +1,144 @@
+@import "../../../../themes/generated/variables.base.scss";
+@import "../../../../dx-styles.scss";
+
+:host {
+  flex: 0 0 auto;
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  ::ng-deep
+    .dx-toolbar
+    .dx-toolbar-item.menu-button
+    > .dx-toolbar-item-content
+    .dx-icon {
+    color: $base-accent;
+  }
+}
+
+::ng-deep
+  .dx-toolbar.header-toolbar
+  .dx-toolbar-items-container
+  .dx-toolbar-after {
+  padding: 0 40px;
+
+  :host-context(.screen-x-small) & {
+    padding: 0 20px;
+  }
+}
+
+::ng-deep .dx-toolbar .dx-toolbar-item.menu-button {
+  width: $side-panel-min-width;
+  text-align: center;
+  padding: 0;
+}
+
+::ng-deep .header-title .dx-item-content {
+  padding: 0;
+  margin: 0;
+}
+
+::ng-deep .dx-button-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0cap;
+  font-size: 14px;
+  margin: 0 9px;
+}
+
+:host-context(.dx-theme-generic) {
+  .dx-toolbar {
+    padding: 10px 0;
+  }
+
+  .user-button > .dx-button-content {
+    padding: 3px;
+  }
+}
+
+// My styles
+.wrapper {
+  flex-direction: row-reverse;
+  align-items: center;
+  column-gap: 1em;
+  display: flex;
+}
+
+.solde {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  column-gap: 0.2em;
+  font-size: 0.8em;
+  font-weight: 550;
+  display: flex;
+}
+
+.btn {
+  justify-content: space-between;
+  background-color: #0a73d4;
+  display: inline-flex;
+  border-radius: 5px;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: white;
+  width: 15em;
+}
+
+.row-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px;
+  column-gap: 10px;
+}
+
+.column-flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-1{
+  font-size: 1.3em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header-2 {
+  font-style: italic;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.notifications-container{
+  margin-top: 40px;
+}
+
+hr {
+  border: 1px solid rgb(218, 215, 215);
+  margin-top: 0px;
+  width: 95%;
+}
+
+.close-btn{
+  margin-left: auto;
+}
+
+.close-btn:hover{
+  cursor: pointer;
+}
+
+// .my-container {
+//   border: 1px solid black;
+// }
+
+// .row-flex-container {
+//   border: 1px solid blue;
+// }
+
+// .column-flex-container {
+//   border: 1px solid red;
+// }
+

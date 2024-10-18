@@ -1,0 +1,20 @@
+<ng-container *ngIf="isAuthenticated(); else unauthenticated">
+  <app-side-nav-outer-toolbar title="{{appInfo.title}}">
+    <div class="epic-container">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer>
+      Copyright © {{appInfo.currentYear}} {{appInfo.title}} Inc.
+      <br/>
+      All trademarks or registered trademarks are property of their respective owners.
+      <br>
+      Made with ❤️ by Med Rami 😁
+    </app-footer>
+  </app-side-nav-outer-toolbar>
+</ng-container>
+
+<ng-template #unauthenticated>
+  <app-unauthenticated-content></app-unauthenticated-content>
+</ng-template>
+
+
