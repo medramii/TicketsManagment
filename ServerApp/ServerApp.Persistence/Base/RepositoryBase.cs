@@ -15,11 +15,11 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
         _appDbContext = context;
     }
 
-    public async Task<List<T>> GetAllAsync() => await _appDbContext.Set<T>().AsNoTracking().ToListAsync();
+    public async Task<IEnumerable<T>> GetAllAsync() => await _appDbContext.Set<T>().AsNoTracking().ToListAsync();
 
     public async Task<T?> FindAsync(int id) => await _appDbContext.Set<T>().FindAsync(id);
 
-    public async Task<List<T>> GetByConditionAsync(Expression<Func<T, bool>> expression, Func<IQueryable<T>, IQueryable<T>>? includeProperties = null)
+    public async Task<IEnumerable<T>> GetByConditionAsync(Expression<Func<T, bool>> expression, Func<IQueryable<T>, IQueryable<T>>? includeProperties = null)
     {
         IQueryable<T> query = _appDbContext.Set<T>().Where(expression).AsNoTracking();
 
