@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { User } from './user.model';
 import { firstValueFrom } from 'rxjs';
-import { ApiClient } from '../api-client';
+import { ApiClient } from '../http/api-client';
 
 const defaultPath = '/';
 

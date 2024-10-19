@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { FooterModule, LoginFormModule } from './shared/components';
-import { ApiClient } from './shared/services/api-client';
+import { ApiClient } from './shared/services/http/api-client';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DxListModule, DxRadioGroupModule, DxToolbarModule } from 'devextreme-angular';
@@ -25,6 +25,7 @@ import {
   ScreenService,
   AppInfoService,
   AuthService,
+  TicketService,
 } from './shared/services';
 
 import { CommonComponentsModule } from './shared/components/common/common.module';
@@ -59,6 +60,7 @@ import { PagesModule } from './pages/pages.module';
     ScreenService,
     AppInfoService,
     AuthService,
+    TicketService,
     { provide: HTTP_INTERCEPTORS, useClass: ApiClient, multi: true }
   ],
   exports: [],

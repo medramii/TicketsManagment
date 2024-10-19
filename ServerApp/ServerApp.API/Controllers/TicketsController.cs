@@ -36,7 +36,7 @@ public class TicketsController : ControllerBase
             if (_ticketsCriteria == null || !_ticketsCriteria.Any())
             {
                 _logger.LogWarn($"No tickets found.");
-                return NotFound("No tickets available.");
+                return NoContent();
             }
 
             var result = _ticketsCriteria.Select(o => new

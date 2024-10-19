@@ -1,0 +1,60 @@
+<h2 class="content-block">Tickets</h2>
+
+<div class="content-block">
+  <div id="data-grid-demo">
+    <dx-data-grid
+      id="gridContainer"
+      [dataSource]="dataSource"
+      keyExpr="id"
+      [showBorders]="true"
+      [rowAlternationEnabled]="true"
+      [allowColumnResizing]="true"
+      [columnMinWidth]="50"
+      [columnAutoWidth]="true"
+      [columnHidingEnabled]="true"
+      (onInitNewRow)="initNewRow($event)"
+    >
+      <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+      <dxo-paging [pageSize]="10"> </dxo-paging>
+      <dxo-pager
+        [visible]="true"
+        allowedPageSizes="10"
+        displayMode="full"
+        [showPageSizeSelector]="true"
+        [showInfo]="true"
+        [showNavigationButtons]="true"
+      >
+      </dxo-pager>
+      <dxo-editing
+        mode="row"
+        [allowUpdating]="true"
+        [allowAdding]="true"
+        [allowDeleting]="true"
+      >
+      </dxo-editing>
+      <dxo-filter-row
+        [visible]="true"
+      ></dxo-filter-row>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-search-panel
+        [visible]="true"
+        [width]="240"
+        searchMode="contains"
+        placeholder="Search..."
+      ></dxo-search-panel>
+
+      <!-- Cols -->
+      <dxi-column dataField="id" caption="Ticket ID" [allowEditing]="false" [width]="150"></dxi-column>
+
+      <dxi-column dataField="description" caption="Description" dataType="string">
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+      </dxi-column>
+
+      <dxi-column dataField="status" caption="Status" dataType="number"  [width]="150">
+        <dxo-lookup [dataSource]="nomenclatureService.getDataSource(nomenclatureService.TicketStatus)" valueExpr="id" displayExpr="value"></dxo-lookup>
+      </dxi-column>
+
+      <dxi-column dataField="createdAt" caption="Date" dataType="date" [allowEditing]="false" [width]="200"></dxi-column>
+    </dx-data-grid>
+  </div>
+</div>

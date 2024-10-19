@@ -4,4 +4,9 @@ export const navigation = [
     path: '/dashboard',
     icon: 'home',
   },
+  {
+    text: 'Tickets',
+    path: '/tickets',
+    icon: 'smalliconslayout',
+  },
 ];

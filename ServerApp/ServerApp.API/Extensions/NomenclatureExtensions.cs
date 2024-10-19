@@ -4,7 +4,7 @@ public class NomenclatureExtensions
     /// <summary>
     /// Ticket status (Open/Closed)
     /// </summary>
-    public enum Status
+    public enum TicketStatus
     {
         Open = 1,
         Closed = 2

@@ -4,6 +4,7 @@ import { AuthGuardService } from './shared/services';
 import { NgModule } from '@angular/core';
 import { 
   DashboardComponent,
+  TicketsComponent,
 } from './pages';
 
 
@@ -11,6 +12,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'tickets',
+    component: TicketsComponent,
     canActivate: [AuthGuardService],
   },
   {
